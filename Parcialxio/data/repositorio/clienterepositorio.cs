@@ -48,9 +48,18 @@ namespace data.repositorio
             return result > 0;
         }
 
-        public Task<bool> updateCliente(cliente cliente)
+        public async Task<bool> updateCliente(cliente cliente)
         {
-            throw new NotImplementedException();
+           var db = dbconnection();
+            var sql = @"update clientes set 
+            documento=@documento,
+            nombre=@nombre,
+            edad=edad
+            where (idclientes=@idclientes)";
+            var result = await db.ExecuteAsync(sql, new { cliente.documento, cliente.nombre, cliente.edad, cliente.idclientes });
+            return result > 0;
+
+            
         }
 
       

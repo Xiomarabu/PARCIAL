@@ -34,5 +34,20 @@ namespace Parcialxio.Controllers
             return Ok(created);
             
         }
+        [HttpPut]
+        public async Task<IActionResult> updatecliente([FromBody] cliente cliente)
+        {
+            if (cliente == null)
+            {
+                return BadRequest();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            bool update = await _clienterepositorio.updateCliente(cliente);
+            return Ok(update);
+
+        }
     }
 }
