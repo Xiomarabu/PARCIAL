@@ -47,7 +47,11 @@ namespace Parcialxio.Controllers
             }
             bool update = await _clienterepositorio.updateCliente(cliente);
             return Ok(update);
-
+        }
+        [HttpDelete]
+        public async Task<ActionResult>DeleteClienteById(int id)
+        {
+            return Ok(await _clienterepositorio.deleteCliente(id));
         }
     }
 }

@@ -59,7 +59,14 @@ namespace data.repositorio
             var result = await db.ExecuteAsync(sql, new { cliente.documento, cliente.nombre, cliente.edad, cliente.idclientes });
             return result > 0;
 
-            
+        }
+
+        public async Task<bool>deleteClientes(int id)
+        {
+            var db = dbconnection();
+            var sql = @"delete from clientes where idclientes=@Id";
+            var result = await db.ExecuteAsync(sql, new { id });
+            return result > 0;
         }
 
       
