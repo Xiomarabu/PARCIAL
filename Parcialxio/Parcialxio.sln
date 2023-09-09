@@ -5,6 +5,10 @@ VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parcialxio", "Parcialxio\Parcialxio.csproj", "{62621B88-16F4-4D43-AA9C-A0EFC707874D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "model", "model\model.csproj", "{8C26847D-9D78-4D4D-978A-51A7B465F0EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data", "data\data.csproj", "{6C03443B-16FC-4D4A-9FD6-BAE0BAAD200C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{62621B88-16F4-4D43-AA9C-A0EFC707874D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62621B88-16F4-4D43-AA9C-A0EFC707874D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62621B88-16F4-4D43-AA9C-A0EFC707874D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C26847D-9D78-4D4D-978A-51A7B465F0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C26847D-9D78-4D4D-978A-51A7B465F0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C26847D-9D78-4D4D-978A-51A7B465F0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C26847D-9D78-4D4D-978A-51A7B465F0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C03443B-16FC-4D4A-9FD6-BAE0BAAD200C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C03443B-16FC-4D4A-9FD6-BAE0BAAD200C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C03443B-16FC-4D4A-9FD6-BAE0BAAD200C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C03443B-16FC-4D4A-9FD6-BAE0BAAD200C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
