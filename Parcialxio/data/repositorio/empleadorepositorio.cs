@@ -27,7 +27,9 @@ namespace data.repositorio
        
         public Task<IEnumerable<empleado>> getempleado()
         {
-            throw new NotImplementedException();
+            var db= dbconnection();
+            var consulta = @"select * from empleados";
+            return db.QueryAsync<empleado>(consulta);
         }
 
         public Task<empleado> getempleadoById(int id)

@@ -31,5 +31,10 @@ namespace Parcialxio.Controllers
             return Ok(created);
            
         }
+        [HttpGet]
+        public async Task<IActionResult> getempleado()
+        {
+            return Ok(await _empleadorepositorio.getempleado());
+        } 
     }
 }
