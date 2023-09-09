@@ -14,6 +14,11 @@ namespace Parcialxio.Controllers
         {
             _clienterepositorio = clienterepositorio;
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> getclientebyId(int id)
+        {
+            return Ok(await _clienterepositorio.getClienteById(id));
+        }
         [HttpPost]
         public async Task<IActionResult> InsertClientes([FromBody] cliente cliente )
         {
