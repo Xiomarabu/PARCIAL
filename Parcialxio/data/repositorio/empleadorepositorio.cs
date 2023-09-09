@@ -34,16 +34,28 @@ namespace data.repositorio
 
         public Task<empleado> getempleadoById(int id)
         {
-            throw new NotImplementedException();
+            var db = dbconnection();
+            var consulta = @"select * from empleados where idempleados=@Id";
+            return db.QueryFirstOrDefaultAsync<empleado>(consulta, new { Id = id });
+
         }
 
-        public Task<bool> updateempleado(empleado empleado)
+        public async Task<bool> updateempleado(empleado empleado)
         {
-            throw new NotImplementedException();
+            var db = dbconnection();
+            var sql = @"update empleados set 
+                      Nombre=@Nombre,
+                      documento=@documento,
+                      numerodeventas=@numerodeventas where (idempleados=@idempleado)";
+            var result = await db.ExecuteAsync(sql, new { empleado.Nombre, empleado.documento, empleado.numerodeventas, empleado.idEmpleado });
+            return result > 0;
         }
-        public Task<bool> deleteempleado(int id)
+        public async Task<bool> deleteempleado(int id)
         {
-            throw new NotImplementedException();
+            var db= dbconnection();
+            var sql = @"delete from empleados where idEmpleados=@Id";
+            var result = await db.ExecuteAsync(sql, new { id });
+            return result > 0;
         }
 
         protected MySqlConnection dbconnection()

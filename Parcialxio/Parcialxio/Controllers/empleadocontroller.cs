@@ -35,6 +35,27 @@ namespace Parcialxio.Controllers
         public async Task<IActionResult> getempleado()
         {
             return Ok(await _empleadorepositorio.getempleado());
-        } 
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> getempleadosById(int id)
+        {
+            return Ok(await _empleadorepositorio.getempleadoById(id));
+        }
+        [HttpPut]
+        public async Task<IActionResult> updateempleado([FromBody] empleado empleado)
+        {
+            if(empleado == null)
+            {
+                return BadRequest();
+            }
+            
+            bool update = await _empleadorepositorio.updateempleado(empleado);
+            return Ok(update);
+        }
+        [HttpDelete]
+        public async Task<ActionResult> DeleteempleadoById(int id)
+        {
+            return Ok(await _empleadorepositorio.deleteempleado(id));
+        }
     }
 }
